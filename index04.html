@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta  charset="utf-8">
+		<title>Ejecucion de Condicionales o difurcacion de codigo</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var cantidadStock = prompt("Ingrese la cantidad de productos en stock: ");
+			if(cantidadStock <= 5)
+			{
+				alert("Tu Stock es inferior a : " + cantidadStock);
+				//recordemos que al pedir datos al usuario
+				//Se los solicitamos mediante una textbox caja de texto
+				//por lo que si no parseamos el valor de vuelta lo tomara como texto
+				//y lo concatenara con la cantidad total
+				
+				//Si el valor del stock es menor a 5 le sumamos automaicamente 10
+				cantidadStock = parseInt(cantidadStock)+10;
+				alert("Se han añadido 10 Productos adicionales al stock");
+			}
+			else
+			{
+				alert("Stock actual : " + cantidadStock);
+
+			}
+			document.write("Contidad de stock añadida al proucto : " + cantidadStock);		
+		</script>	
+	</body>
+</html>	

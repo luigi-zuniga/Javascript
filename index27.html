@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>???</title>
+	<script type="text/javascript">
+
+	function inicializar()
+	{		
+		//Una vex que obtenemos objetos DOM, tenemos la posibilidad de leer y escribir
+		//cualquiera de los elementos y cualquiera de los atributos que este elemento tiene
+
+		var link = document.getElementById("PRACTJS");
+		var caja = document.getElementById("cajaContenido");
+
+		//podriamos hacer una alerta de link.id
+		//El objeto link como es un objeto tiene propiedades con sintaxis de punto
+		//ponemos el nombre del objeto link (.) el nombre de la propiedad que son las mismas que definimos en el html
+
+		alert(link.id);
+		//desde las propiedades podemos leer y preguntar por ejemplo el contenido del target o mostrar su contenido
+		if(link.target == "pero el nombre de la propiedad es _blank"){
+			alert("El link se abre en una ventana nueva");
+		}
+		alert(link.target);
+
+		//Asi como podemos leer las propiedades podemos darle valor a esas propiedades
+		link.href = "http://www."
+
+	}
+	</script>
+</head>
+<body onload="inicializar()">
+	<div id="cajaContenido">
+		<a id="PRACTJS" target="_blank">link a la web</a>
+	</div>
+</body>
+</html>

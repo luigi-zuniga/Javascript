@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplos Practicos de bucles</title>
+</head>
+<body>
+	<!-- Ejemplo en cual utilizamos bucles for para la visualizacion de dia,mes y año-->
+	<p>Fecha de Nacimiento</p>
+	<form id="form1" name="form1" method="post" action="">
+		<select name="dia" id="dia">
+			<!--<option>1</option>-->
+			<script type="text/javascript">
+				for(var i=0;i<31;i++){
+					//for que muestra 31 dias
+					document.write("<option>" + parseInt(i+1) + "</option>");
+					//la sentecia comienza desde 0 por que nos devuelve 30 como valor final a este le sumamos 1 mas para completar 31 dias.
+				}
+			</script>
+		</select>
+		<select name="mes" id="mes">
+			<script type="text/javascript">
+				for(var i=0;i<12;i++){
+					//visualizacion de los 12 meses
+					document.write("<option>" + parseInt(i+1) + "</option>");
+				}
+			</script>
+		</select>
+		<select name="anio" id="anio">
+				<script type="text/javascript">
+				//recorremos desde 1949 hasta 2016
+				for(var i=1949;i<2016;i++){
+					document.write("<option>" + parseInt(i+1) + "</option>");
+				}
+			</script>
+		</select>
+	</form>
+	<!-- EJEMPLO de creacion de tablas con 12 meses, donde solicitamos el numero de filas a generar TABLAS-->
+	<p>Ejemplo con tablas</p>
+	<table width="200" border="1">
+		<!--table row para la creacion de table head-->
+		<tr>
+		<script type="text/javascript">
+		//solicitamos la cantidad de sucursales las que agregaran como filas
+		var cantidadSucursales = prompt("Ingrese la cantidad de sucursales");
+			for(var i=0;i<=12;i++){
+				//si la posicion de i es 0 añadimos un th 
+				if(i==0){
+					document.write("<th>Sucursal</th>");
+				}else{
+					//luego el resto de las posiciones es visualizado el numero de meses
+					document.write("<th>Mes " + i + "</th>");
+			}
+		}
+		</script>
+	</tr>
+	<script type="text/javascript">
+				//para i si es menor al numero de sucursales incrementar hasta el valor ingresado
+				for(var i=0;i<cantidadSucursales;i++){
+					//creamos otra table row
+					document.write("<tr>");
+					//luego creamos table date dentro de las table row hasta generar los 12 meses del año
+					for(var j=0;j<13;j++){
+						//Le indicamos con \ que lo que este dentro no es codigp javascript
+						//si la posicion de j es 0 añadimos otra table date con el numero de sucursal
+						if(j==0){
+							document.write("<td>Sucursal Nº" + parseInt(i+1) + "</td>");
+						}else{
+							document.write("<td><input type='text' size='9'> </td>");
+						}
+					}
+					//cerramos la etiqueta html de table row
+					document.write("</tr>");
+				}
+			</script>
+	</table>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>Condiciones Complejas</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var cantidadProductos = prompt("Ingrese la cantidad de productos");
+			var precioTotal = prompt("Ingrese el precio Total");
+			var pagoEfectivo = confirm("¿Ha pagado en efectivo?");
+			var descuento = 0 ;
+			
+			if(cantidadProductos > 10 && precioTotal < 500)
+			{
+				descuento = 10;
+				document.write("Se aplicara un descuento del 10%");
+			}
+
+			if(cantidadProductos > 10 && precioTotal >=500)
+			{
+				descuento = 15;
+				document.write("Se aplicara un descuento del 15%");
+			
+			}
+
+			if(precioTotal < 10 && !pagoEfectivo)
+			{
+				descuento = 2;
+				document.write("Se aplicara un descuento del 2%");
+			}else{
+				document.write("No se aplicado el descuento por realizar pago sin efectivo");
+			}
+
+			//si lleva mas de 500 productos o 1000 en precio -> entonces es mayorista ademas debe pagar en efectivo
+			if((cantidadProductos >= 500 || precioTotal >= 1000) && (pagoEfectivo) )
+			{
+				totalDescuento = descuento + descuento*10/4;
+				document.write("el descuento aplicado es de :" + totalDescuento);
+			}	
+
+			/*Operadores logicos complejos 
+			  AND &&
+
+			  OR ||
+			  
+			  NOT !
+			  
+			  XOR xor 
+			*/
+
+		</script>
+	</body>
+</html>		

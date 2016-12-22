@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Funciones</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//los nombres de las funciones son igual de sensitiva que las variables
+		//Para ser usadas deben ser invocadas
+		//Funcion con 2 valores mensaje y color
+
+		//Varible global que puede ser utilizada en todo el codigo javascript y del documento
+		var tipoLetra="Arial";
+
+		//funcion con contructor que recibe 2 variables locales
+		function mostrarMensaje(mensaje,color)
+		{
+			//Variables que se definen dentro de una funcion son conocidas como 
+			//varibles locales y solo pueden ser usadas dentro de la funcion
+			var tamanioLetra = 14;
+
+			//si el color ingresado es "rojo"
+			if(color=="rojo"){
+				//genera una etiqueta p con un estilo de letra color rojo
+				document.write("<p style='color:red'>" + mensaje + "</p>");
+			}else{
+				//genera una etiqueta p con un estilo de letra color azul
+				document.write("<p style='color:blue'>" + mensaje + "</p>");
+			}
+		}
+
+		//funcion con contructor que recibe 2 variables locales
+		function calcularDescuento(precio, descuento)
+		{
+			//guardamos el descuento en una variable local llamada final pero desde fuera de la funcion no se puede usar
+			//para esto le pedimo que retorne lo que la varible tiene
+			var final = precio - (precio * descuento/100);
+			//le pedimos que retorne fuera de la funcion la variable final
+			return final;
+		}
+
+		//si nos fijamos a la funcion le damos los valores dentro del constructor precio = 600 y descuento = 15
+		document.write("Descuento calculado es: " + calcularDescuento(600, 15));
+
+		//asignamos una variable precioPagado que toma el valor de la funcion calcularDescuento;
+		//enviamos el precio y el descuento a la funcion calcularDescuento, pero mediante la varible que toma los valores de la funcion
+		var precioPagado = calcularDescuento(1000,50);
+		
+		//visualizamos la variable local precio la que es retornada por la funcion calcular descuento
+		document.write("Precio : " + precio);
+
+		calcularDescuento(1500,145);
+		//Invocar a la funcion y le entregamos los valores mediante el constructor (valor1,valor2)
+		//los valores que damos a la funcion deben de coincidir con los declarados en la misma 
+		mostrarMensaje("Este es mi mensaje","rojo");
+		mostrarMensaje("Este es otro mensaje","azul");
+
+		//no devolvera nada ya que es una variable local y solo funciona dentro de la funcion
+		//document.write(tamanioLetra);
+	</script>
+</body>
+</html>

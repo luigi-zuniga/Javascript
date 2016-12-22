@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Eventos de Tecla</title>
+	<script type="text/javascript">
+		function mostrarTecla(event)
+		{
+			//event, parametro entregado desde onkeyup
+			//Posee propiedades para saber cual fue la tecla que se presiono
+			//Keycode Representa el codigo de la tecla, en ASCII.
+			alert(event.keyCode);
+			
+			//Preguntamos su ademas de la tecla esta presionada una de las siguientes teclas adicionales
+			if(event.shiftKey)
+			{
+				alert("Esta Presionada la tecla SHIFT");
+			}
+			else if(event.ctrlKey)
+			{
+				alert("Esta Presionada la tecla CTRL");
+			}
+			else if(event.altKey)
+			{
+				alert("Esta Presionada la tecla ALT");
+			}
+			
+			//charCode nos da el codigo de la LETRA que la TECLA representa, este funciona en internet explorer ya que no interpreta keyCode
+			//alert(event.charCode);
+
+			//Para que esto funcione debemos de utilizar el input que es donde ha sido asignada la funcion.
+		}
+	</script>
+</head>
+<body>
+	<form id="form1" name="form1" method="post" action="" 
+        onsubmit="alert('Formulario enviado')" onreset="reset">
+			<p>
+			<label for="nombre">Nombre Completo</label>
+			<!--
+			onkeydown  : Es cuando se presiona una tecla
+			onkeyup	   : Es Cuando se suelta la tecla
+						 
+						 onkeyup="mostrarTecla(event)
+					
+						 onkeyup funciona con un parametro especial que es mas bien el Objeto event, que lleva todos los eventos a una funcion mostrarTecla(), 
+
+			onkeypress : Utilizada para cuando el usuario combina teclas de  
+			 			 caracteres como SHIFT+4=$ 
+			onScroll   : Captura la rueda del mouse, cuando el usuario se d
+						 desplaza por la web.
+			-->	
+			<input type="text" name="nombre" id="nombre" 
+            placeholder="Ingrese su nombre completo" 
+            onkeydown=""
+            onkeyup="mostrarTecla(event)"
+            onkeypress=""
+            />
+		</p>
+		<p>
+		<input type="submit" name="button_Submit" id="button" value="Enviar" />
+        <input type="reset" name="button_Reset" value="Limpiar"/>
+		</p>
+	</form>
+</body>
+</html>

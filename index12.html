@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Aplicacion de funciones</title>
+		<script type="text/javascript">
+			//funcion que recibe 3 valores, el terceros de estos es una etiqueta html selected
+			function crearOptions(desde, hasta, selected)
+			{
+					//recorremos el bucle que recibe el valor desde y hasta
+					for(var i=0;i<(hasta-desde+1);i++)
+					//si hasta = 31 y desde = 1, restamos hasta-desde = 30 y sumamos 1 los dias del mes
+					//si hasta = 12 y desde = 1, hasta-desde=11+1 = 12
+					//si hasta = 2016 y desde = 1900 , hasta-desde +1 = 116 años se generan dentro del option 
+					{
+					if(selected!=undefined){
+						//No han pasado el tercer parametro
+						if(selected == (i+desde)){
+							//estoy indicando el que año que queremos seleccionado para visualizar
+							document.write("<option selected='selected'>" + parseInt(i+desde) + "</option>");
+						}else{
+							document.write("<option>" + parseInt(i+desde) + "</option>");
+						}
+					}else{
+						//No esta seleccionado
+						document.write("<option>" + parseInt(i+desde) + "</option>");
+					}
+				}
+			}
+		//Fin de la funcion
+		</script>
+	</head>
+	<body>
+		<!-- semantica html en conjunto con javascript-->
+		<p>Fecha de Nacimiento</p>
+		<form id="form1" name="form1" method="post" action="">
+			<select name="dia" id="dia">
+			<!--<option>1</option>-->
+			<!--mediante la etiqueta script llamamos a la funcion crearOption que nos debe devolver la operacion indicada segun los valores entregados-->
+			<script type="text/javascript">
+				//hasta = 31 y desde = 1 , dentro de la funcion se añade +1 y generamos los dias del mes
+				crearOptions(1,31);
+			</script>
+		</select>
+		<select name="mes" id="mes">
+			<script type="text/javascript">
+			//hasta = 12 y desde = 1 , dentro de la funcion se añade +1 y generamos los meses del año
+				crearOptions(1,12);
+			</script>
+		</select>
+		<select name="anio" id="anio">
+			<script type="text/javascript">
+				//hasta = 2016 y desde = 1900 ademas se visualiza desde la el año 1980 que es enviado a selected dentro de la funcion, 
+				//Ademas a esta se le añade +1 y genera 116 años a visualizar dentro de option
+				crearOptions(1900,2016, 1980);
+			</script>
+		</select>
+	</form>
+</body>
+</html>

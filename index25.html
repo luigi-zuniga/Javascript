@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Objetos</title>
+</head>
+<body>
+	<h1>Objetos</h1>
+	<ul>
+		<li>Que es un Objeto</li>
+		<ul>
+			<li>En <b>JavaScript</b> un Objeto es una variable
+			ya sea string, boolean , logical o numerica. 
+			Un Objeto es otra manera de llamar a un variable que tiene la diferencia respecto a los demas , que lo que contiene dentro es una lista de propiedades y metodos.
+			<ol>
+				<li>Metodos</li>
+				<p>Son funciones que se le aplican a los Objeto, su diferencia es que poner el nombre de la funcion y parenctesis, sino poner el nombre del bjeto (.) el nombre de la funcion.</p>
+				<li>Propiedades</li>
+				<p>Son Propiedades asociadas a ese objeto, por ejemplo si el objeto es una persona sus propiedades serian :</p>
+				<ul>
+					<li>Nombre</li>
+					<li>Apellido</li>
+					<li>Rut</li>
+					<li>Fecha de nacimiento</li>
+				</ul>
+				<p>En lugar de tener 5 <b>Propiedades</b> Distintas, el objeto encapsula todas esas propiedades en un solo nombre</p>
+				</ol>
+			</li>
+		</ul>		
+		<li>Sntaxis de punto</li>
+		<p>Permite definir el nombre de un objeto junto al nombre de una propiedad, o el nombre de un objeto (.) el nombre de una funcion</p>
+		<li>Propiedades y metodos</li>
+		<li>Propiedades en cascada</li>
+		<p>Se utiliza en el caso de que un objeto tenga una propiedad que a su vez es otro objeto. <br/>Por ejemplo, si un objeto tiene la propiedad nombre es una string entonces cortamos ahi. <br/>Pero si un Objeto persona tuviera como propiedad a otra persona, por ejemplo a un hijo. Podemos ir navegando por esa estructura y pedir el nombre del hijo haciendo referencia a el como; <b>Persona.hijo.nombre</b> lo que llamariamos una navegacion en propiedades en cascada</p>
+	</ul>
+	<h2>DOCUMENT OBJECT MODEL</h2>
+	<h3>Que es y para que sirve</h3>
+	<p>Es una representacion que hace el navegador cuando entramos a una pagina web respescto a todos lo elementos html que el documento contiene, como los link , textos , imagenes, tablas , divs y cualquier etiqueta que agregemos.
+	por cada etiqueta añadidad el <b>Document Object Model</b> crea un objeto (variable) en memoria que contiene todas las propiedades y atributos que le asignemos a ese elemento html</p>
+	<p>Esto nos permite acceder a esta variable de alguna manera y leer una propiedad o inclusive cambiar el dato de una propiedad, como cambiar el color de fondo a un div desde codigo <b>javascript</b> ya sea en un bucle o en alguna otra sentencia del lenguaje. <b>DOM</b> es bastante extenso y tiene varias versiones que no permite cambiar el contenidod e los elementos seguin lo que queramos obtener.</p>
+</body>
+</html>

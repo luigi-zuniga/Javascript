@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cancelando acciones por defecto</title>
+	<script type="text/javascript">
+		//Funcion que pregunta al usuario si quiere salir de la pagina o no.
+		function preguntar()
+		{
+			//La funcion Confirm nos retorna un valor TRUE o FALSE
+			var respuesta = confirm("¿Deseas salir de la pagina?");
+			//en caso de presionar TRUE(SI) saldra de la pagina
+			//en caso de presionar FALSE(cancelar) se quedara en la pagina
+			return respuesta;
+		}
+	</script>
+</head>
+<body>
+	<!--Todos los eventos Disponibles en Javascript nos permiten cancelar
+		la accion que los navegadores tienen sobre ese evento, capturando el evento onClick , recordemos que onClick se ejecuta antes de que el link en este caso, tenga la accion de ir a la direccion indicada
+	 -->
+	<a href="https://www.google.cl" onClick="return preguntar()">Ir a la web</a>
+	<!-- return le indica al evento onClick si queremos realizar o no la accion por defecto, dependiendo del valor retornado en la funcion ya sea TRUE o FALSE-->
+</body>
+</html>

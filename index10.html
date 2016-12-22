@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sentecia Switch Case</title>
+</head>
+	<body>
+		<script type="text/javascript">
+		//solicitamos al usuario uno de los valores que cumpla con la condicion multiple
+		var semaforo = prompt("Ingrese uno de los colores del semaforo");
+		//si el valor entregado es un string vacio , volvemos a solicitar su valor
+		while(semaforo=="")
+		{
+			//volvemos a solicitar el valor hasta que cumpla la condicion del bucle
+			var semaforo = prompt("Ingrese uno de los colores del semaforo");
+	
+		}
+
+		//si el valor corresponde uno de las sentencia enviamos su valor
+		switch(semaforo)
+		{
+			case "rojo":
+				alert("stop");
+				break;
+			case "ambar":
+				alert("Precausion");
+				break;
+			case "verde":
+				alert("Pasar");
+				break;	
+			default:
+				//si no cumple con uno de los valores solicitados en la variable multiple enviamos un mensaje
+				alert("El color Ingresado no corresponde");
+				break;
+		}
+		//Si no ingresamos la sentencia break pasara automaticamente a la siguiente case.
+		</script>
+		
+	</body>
+</html>
