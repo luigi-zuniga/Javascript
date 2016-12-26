@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cambiando Estilos CSS</title>
+	<script type="text/javascript">
+
+	function inicializar()
+	{		
+		var link = document.getElementById("PRACTJS");
+		//para acceder a las propiedades de css, debemos hacer referencia al objeto
+		var caja = document.getElementById("cajaContenido");
+		//Objeto caja, que hace referencia al ID cajaContenido del la etiqueta id
+		caja.style.backgroundColor="yellow";
+		caja.style.border="solid 1px"
+		caja.style.height="100px"
+
+		alert(link.id);
+		
+		if(link.target == "_blank")
+		{
+			alert("El link se abre en una ventana nueva");
+		}
+
+		alert(link.target);
+
+		link.href = "https://www.google.com"
+	}
+	
+	function cambiarLink()
+	{
+		document.getElementById("PRACTJS").href="https://www.youtube.com";
+	}
+	
+	</script>
+</head>
+<body onload="inicializar()">
+	<!-- Tambien podemos aprovechar eventos para el mouse cuando pasamos sobre el boton usado this que representa al objeto DOM sin necesidad de buscar por el ID , el sistema JS sabra cual es evento con que generamos el elemento sin llamar a caja, modemos usar estos eventos sobre cualquier elemento que lo soporte -->
+	<div id="cajaContenido" onMouseOver="this.style.backgroundColor='white'" onMouseOut="this.style.backgroundColor='yellow'">
+		<a id="PRACTJS" target="_blank">link a la web</a>
+		<input /type="button" onClick="cambiarLink()" value="Cambiar valor del Link" />	
+	</div>
+</body>
+</html>

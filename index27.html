@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>???</title>
+	<title>Cambiando Valores de atributos</title>
 	<script type="text/javascript">
 
 	function inicializar()
@@ -18,20 +18,30 @@
 
 		alert(link.id);
 		//desde las propiedades podemos leer y preguntar por ejemplo el contenido del target o mostrar su contenido
-		if(link.target == "pero el nombre de la propiedad es _blank"){
+		if(link.target == "_blank"){
 			alert("El link se abre en una ventana nueva");
 		}
+		//Muestra el nombre de la propiedad target
 		alert(link.target);
 
-		//Asi como podemos leer las propiedades podemos darle valor a esas propiedades
-		link.href = "http://www."
-
+		//Asi como podemos leer las propiedades, podemos darle valor a esas 		propiedades como dar un link a la porpiedad href
+		link.href = "https://www.google.com"
 	}
+	function cambiarLink()
+	{
+		//var link = document.getElementById("PRACTJS");	
+		//Tambien podemos cambiar el link, sin necesidad de que se guarde en una variable. 
+		//Podemos usar el concepto de CASCADA de Propiedades del documento
+		document.getElementById("PRACTJS").href="https://www.youtube.com";
+	
+	}
+	
 	</script>
 </head>
 <body onload="inicializar()">
 	<div id="cajaContenido">
 		<a id="PRACTJS" target="_blank">link a la web</a>
+       	<input /type="button" onClick="cambiarLink()" value="Cambiar Link" />	
 	</div>
 </body>
 </html>
