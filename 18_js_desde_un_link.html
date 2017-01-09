@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejecutar JavaScript desde un link</title>
+	<meta charset="utf-8">	
+	<script type="text/javascript" src="js/impuesto.js"></script>
+</head>
+<body>
+	<!-- javascript: llama a una funcion o la ejecuta directamente desde el enlace-->
+	<a href="javascript:alert('hola desde el link');">Presioname</a>
+	
+	<!-- hacemos un llamado a la funcion desde el directorio js el cual cuanta con el fichero impuesto.js-->
+	<a href="javascript:alert(calcularImpuesto(100))">Calcular impuesto de $100</a>
+</body>
+</html>

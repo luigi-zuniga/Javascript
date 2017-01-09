@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>Eventos de Formulario</title>
+	<script type="text/javascript">
+		function reset(){
+			alert("Formulario reseteado");
+		}
+	</script>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="" onsubmit="alert('Formulario enviado')" onreset="reset">
+        <!--la etiqueta FORM tiene dos eventos propiamente dichos 
+        	onreset	 : Practicamante no se usan y son los que limpian todo el 		
+            		   Formulario.
+            onsubmit : Una de las mas utilizadas se ejecuta cuando el usuario 	
+            		   Envia el formulario ya sea por que se presiono la tecla 
+                       enter o se presiona el boton submit dentro de input.
+            -->
+            <!-- las etiqueta SELECT,INPUT y TEXTAREA
+            	Tienen tres eventos propios que manejan estos formulario
+                onFocus  : Se ejecuta cuando un usuario entre en foco de 
+                		   un campo de texto , tambien una lista de seleccion 		
+                           select o un radiobuton.
+                onBlur	 : Es la contra del onFocus se ejecuta cuando el 
+                		   usuario se va de Foco
+                onChange : Se ejecuta cuando el usuario esta en foco pero 
+                		   ademas ha cambiado el contenido del campo de texto, 
+                           o ha cambiado el valor de una lista de seleccion / 
+                           select
+            	Es muy importante tener en cuenta el evento onSubmit del 
+                formulario y onClick del boton, si presionamos el boton enviar 
+                para el envio con solo presionar ENTER no se ejecutara el 
+                evento onClick, por lo que debemos de tener muy en cuenta 
+                onSubmit para saber que el usuario esta haciendo el envio de un formulario
+                y no el evento onClick
+             -->
+		<p>
+			<label for="nombre">Nombre Completo</label>
+			<input type="text" name="nombre" id="nombre" 
+            onfocus="alert('has entrado en foco')" 
+            onblur="alert('has salido de foco')" 
+            onChange="alert('has cambiado el valor de los datos')"
+            placeholder="Ingrese su nombre completo" />	
+		</p>
+		<p>
+		<input type="submit" name="button_Submit" id="button" value="Enviar" />
+        <input type="reset" name="button_Reset" value="Limpiar"/>
+		</p>
+	</form>	
+</body>
+</html>

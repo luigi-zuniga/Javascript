@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>Condiciones Complejas</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//Solicitamos al usuario unos valores mediante prompt
+			var cantidadProductos = prompt("Ingrese la cantidad de productos");
+			var precioTotal = prompt("Ingrese el precio Total");
+
+			//confirm es parecido a prompt con la diferencia que no devuelve un valor logico boolean (TRUE - FALSE)
+			var pagoEfectivo = confirm("¿Ha pagado en efectivo?");
+			var descuento = 0 ;
+			
+			/* Operadores logicos complejos
+			AND &&   (nos devuelve verdadero solo cuando ambas condiciones son verdaderas, en caso contrario nos devuelve false)
+			OR ||    ()
+			NOT ! 	 ()
+			XOR xor  ()
+			*/
+
+			if(cantidadProductos > 10 && precioTotal < 500)
+			{
+				descuento = 10;
+				document.write("Se aplicara un descuento del 10%");
+			}
+
+			if(cantidadProductos > 10 && precioTotal >=500)
+			{
+				descuento = 15;
+				document.write("Se aplicara un descuento del 15%");
+			}
+
+			//Si paga con tarjeta de credito y el precio es menor a 10 y NO pago en efectivo el descuento sera de 2
+			if(precioTotal < 10 && !pagoEfectivo)
+			{
+				descuento = 2;
+				document.write("Se aplicara un descuento del 2%");
+			}
+
+			//si lleva mas de 500 productos o 1000 en precio -> entonces es mayorista ademas debe pagar en efectivo
+			//con que cualquiera de las 2 codiciones se cumpla entrara a esta condicional pero si ninguna de las 2 se cumple nos dara false
+			//ademas tiene que haber pagado en efectivo
+			//se le aplicara el descuento mientras se cumplan las condiciones de OR y AND
+			if((cantidadProductos >= 500 || precioTotal >= 1000) && (pagoEfectivo) )
+			{
+				descuento = descuento + descuento * 20/100;
+				document.write("<br/>El descuento final aplicado es de : " + descuento + " mayorista");
+			}	
+
+			/*Operadores logicos complejos 
+			  AND &&
+
+			  OR ||
+			  
+			  NOT !
+			  
+			  XOR xor 
+			*/
+		</script>
+	</body>
+</html>		

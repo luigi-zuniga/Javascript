@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sentencia Switch Case 2</title>
+</head>
+	<body>
+		<!-- Ejemplos con los meses y su cantidad de dias-->
+		<!-- 
+		31 dias / enero,marzo, mayo ,julio,agosto, octubre, diciembre
+		30 dias / abril,junio,septiembre,noviembre
+		28-29 dias / febrero
+		-->
+		<script>
+			//funcion que recibe dos valores
+			function meses_a(nom_mes,dias)
+			{
+				document.write("<h1>" + nom_mes + " tiene " + dias + " dias</h1>");
+			}
+		</script>
+
+		<script type="text/javascript">
+			//solicitamos el nombre del mes al usuario
+			var mes = prompt("ingrese un mes del año");
+			while(mes == "")
+			{
+				//si devulve un valor nulo volvemos a solicitar
+				var mes = prompt("ingrese un mes del año");		
+			}
+			
+			var num_a = 31;
+			var num_b = 30;
+			var num_c = 28;
+
+			//en caso de entregar un valor distinto de nulo, pasamos a la sentencia
+			switch(mes)
+			{
+				//al momento de ingresar el mes pasara por cada uno de los meses de los asignados hasta encontrar la sentencia break
+				case "enero":
+				case "marzo":
+				case "mayo":
+				case "julio":
+				case "agosto":
+				case "octubre":
+				case "diciembre":
+
+				alert(mes + " Tiene " + num_a + " dias.");
+				meses_a(mes,num_a);
+
+				break;
+
+				//sentencia que entrega los dias de los meses segun una de las condiciones que seran recorridas hasta encontrar break	
+				case "abril":
+				case "junio":
+				case "septiembre":
+				case "noviembre":
+					  meses_a(mes);
+					  alert("Tiene " + num_b + " dias");
+					  break;				  
+				case "febrero":
+					//tambien puede tener 29 dias dependiendo del año b.	
+					alert("Tiene " + num_c + " dias");
+					meses_a(mes,num_c);
+					break;
+				default:alert("El mes ingresado no es valido");break;	  
+			}
+		</script>
+	</body>
+</html>

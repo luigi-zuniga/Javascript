@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Eventos de Mouse</title>
+	<style>
+		.caja
+		{
+			width:300px;
+			height:300px;
+			background-color:blue;
+		} 
+	</style>
+</head>
+<body>
+	<!-- 
+	onClick="alert('Haz hecho click')" al hacer un click 
+	ondblclick="alert('Has realizado doble click')" al hacer doble click y si es usado junto con onclick este no se aplica.
+	onmouseover="alert('Haz pasado sobre el elemento')" evento que indica que estas dentro de un elemento al pasar el cursor 
+	onmouseout="alert('Haz salido del elemento')" evento que indica que estas fuera de un elemento
+	-->
+	<div class="caja" ondblclick="alert('Has realizado doble click')" onmouseover="alert('Haz pasado sobre el elemento')" 
+        onmouseout="alert('Te has ido del elemento')">
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta  charset="utf-8">
+	<title>Uso de variables</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//Javascript es CASE SENTITIVE
+		//esto quiere decir que los nombres de las varibles deben de ser igual a las que declaramos y asignamos
+
+		var NOMBRE;
+		//la varible nombre esta mal asignada ya que se declaro como NOMBRE en mayusculas y no en minusculas.
+		//esta signacion seria erronea debido a que se declaro con el valor de NOMBRE
+		nombre = "Juan";
+
+		//concatenacion de string
+		document.write("Hola" + " " + nombre);
+
+		//entre sentecias si podemos dejar espacios
+		var precio = 75;
+		var impuesto = precio*10/100;
+
+		//Operacion aritmetica para calcular el total
+		// total = 75 + (precio*10/100)
+		var total = precio + impuesto;
+
+		//alert proporciona una ventana emergente que nos dara el resultado que le enviemos
+		alert("El precio es " + precio + " y el impuesto es : " + impuesto + ": Total " + total);
+
+		//podemos reutilizar el valor de una varible sin modificar su valor 
+
+		var precio2 = precio;
+		
+		//el valor de precio2 tomara el de precio que era 75
+
+		//precio2 = 75 + 5
+		precio2 = precio2 + 5;
+
+		//document.write escribe sobre el documento
+		document.write(" El precio 2 contiene un valor de : " + precio2);
+
+	</script>
+</body>
+</html>

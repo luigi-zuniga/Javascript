@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Operaciones Matematicas</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//declaracion de variales 
+		var precioMonitor = 150;
+		var precioTeclado = 40;
+
+		//Suma
+		var precioTotal = precioTeclado + precioMonitor;
+
+		var precioConRecargo = precioMonitor + 5;
+
+		//Restar
+		var diferencia = precioMonitor - precioTeclado;
+
+		//Multiplicar
+		var precio2Monitores = precioMonitor * 2;
+
+		//Dividir
+		var precio1Monitor = precio2Monitores / 3;
+
+		//Autosumar
+		precioTotal +=1;  //precioTotal =  preciototal + 1;
+
+		//Aumentar un 15%
+		precioMonitor *=1.15;
+		precioTeclado *=1.15;
+
+		//Incrementador y Decrementador
+		var cantidadStock = 60;
+		cantidadStock++;
+		cantidadStock--;
+
+		//Resto de una division;
+		var resto = 100 % 3; //resto de lo que queda de una division entera
+
+		var total = ((precio2Monitores * precioTeclado) * 2) + ( 5 * cantidadStock);
+		alert("Total: " + total);
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Introduccion a EVENTOS</title>
+	<style>
+		.caja{
+			width: 200px;
+			border:solid 1px #1D74B7;
+		}
+		.caja p{
+			font-family: Arial,sans-serif;
+			font-size: 16px;
+		}
+	</style>
+	<script type="text/javascript">
+		function botonClick()
+		{
+			//no se puede utilizar document write en un evento, esto solo es para practicar
+			//document.write("Hola desde el boton");
+			alert("Hola desde la funcion botonClick");
+		}
+	</script>
+</head>
+<body>
+	<h1>Probando Eventos</h1>
+	<!--Normalmente Javascript funciona con la programacion Orientada a Eventos-->
+	<!--los eventos comienzan con la palabra on-->
+	<!--En este boton llamamos a la funcion botonClick que se defina en la cabecera y es invocada al pulsar el boton-->
+	<div class="caja">
+	<p>Funcion onclick</p>
+	<input type="button" name="boton" id="boton" value="enviar" onClick="botonClick();"/>
+	</div>
+	<div class="caja">
+	<p>alert desde input</p>
+	<input type="button" name="boton" id="boton" value="enviar" onClick="alert('Hola desde alert html');"/>
+	</div>
+	<!--este evento es una etiqueta mas dentro de html, no podemos usar comillas dobles desde la etiqueta alert dentro del html, solo comillas simples-->
+</body>	
+</html>

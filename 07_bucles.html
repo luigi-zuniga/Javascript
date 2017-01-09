@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bucles</title>
+</head>
+<body>
+	<!--Ejemplo de bucle while-->
+	<script type="text/javascript">
+		var nombre=prompt("Ingrese su nombre");
+
+		//Preguntamos si el nommbre esta vacio
+		while(nombre==""){
+			//Si la condicion se cumple entra al BUCLE y vuelve a solicitar el nombre
+			nombre=prompt("Ingrese su nombre");
+		}
+		//Si no se cumple mostramos el mensaje por pantalla
+		document.write("Bienvenido/a " + "<h1>" + nombre + "</h1>");
+	</script>
+
+	<!--Ejemplo de bucle FOR-->
+	
+	<script type="text/javascript">
+		//For que imprime en el documento el valor de i mientras su valor sea menor igual a 20
+		for(var i=0; i <= 20; i++){
+			document.write("Nº" + i + "<br/>");
+		}
+		//Indicamos al usurio que estamos fuera del bucle for
+		document.write("Fuera del bucle FOR");
+	</script>
+
+	<script type="text/javascript">
+		//variable Boolean asignada con un valor true
+		var seguir=true;
+		//indicamos que incremente su valor mientras el valor de seguir sea true
+		for(var i=0;seguir;i++)
+		{
+			//imprimimos el valor de i en su incremento
+			alert(i);
+			//condicional que indica si i es mayor o igual a 7
+			if(i >= 7){
+				//pasa a convertir el valor de la variable asignada true a FALSE;
+				seguir = false;
+			}
+			//al cambiar su valor a false ya no cumple con la condicion y da fin al bucle
+		}
+	</script>
+</body>
+</html>	 

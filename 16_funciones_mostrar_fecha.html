@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta  charset="utf-8">
+	<title>Mostrar Fecha</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//Date genera un objeto en memoria con la fecha actual
+		var fecha = new Date();
+		//Las funciones de Date que podemos invocar son getDate,getMonth,getYear
+		var dia = fecha.getDate();
+		var mes = fecha.getMonth();
+		var diaSemana = fecha.getDay();
+		var fecha = fecha.getFullYear();
+
+		//array con los nombres de los meses del año
+		var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+		//arrays con los nombres de los dias de la semana
+		var diasSemana = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"];			
+
+		document.write("Hoy es " + diasSemana[diaSemana] +  " ," + dia + " de " +  meses[mes] + " del " + fecha);
+		document.write("<h3>Funcionamiento</h3>" + "<b>Posicion de la semana</b>:" + diaSemana + "<br/><b>Nombre del dia de la semana:</b>" + diasSemana + "<br/><b>Dia</b>:" + dia + "<br/><b>Mes</b>: " + meses + " <br/><b>Posicion del mes</b>:" + mes + "<br/><b>Año</b>:" + fecha);
+	</script>
+</body>
+</html>

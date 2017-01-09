@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>El Objeto This</title>
+	<style type="text/css">
+		div
+		{
+			width: 400px;
+			height: 400px;
+			float: left;
+			margin: 15px;
+			background-color:yellow;
+			border:1px solid #339;
+		}
+	</style>
+	<script type="text/javascript">
+		function divClick(caja)
+		{
+		//cuando this llega a la funcion, pasa a llamarse (caja) pero aun asi podemos acceder a todas las propiedades de la caja. En este caso accedemos al id
+			alert("Haz presionado la " + caja.id);
+		}
+	</script>
+</head>
+<body>
+	<!--Hacemos la misma llamada a la misma funcion-->
+	<!--Objeto This representa a todo el div en este casoon cada una de sus propiedades,eventos y contenido-->
+	<div id="caja1" onClick="divClick(this)"></div>
+	<div id="caja2" onClick="divClick(this)"></div>
+	<div id="caja3" onClick="divClick(this)"></div>
+	<div id="caja4" onClick="divClick(this)"></div>
+</body>
+</html>

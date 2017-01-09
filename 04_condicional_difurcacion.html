@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta  charset="utf-8">
+		<title>Ejecucion de Condicionales o difurcacion de codigo</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//prompt proporciona una ventana emergente donde el usuario puede ingresar datos.
+
+			//la variable tomara el valor dado por el usuario
+			var cantidadStock = prompt("Ingrese la cantidad de productos en stock: ");
+
+			//Condicional Simple IF
+			if(cantidadStock <= 5)
+			{
+				alert("Tu Stock es inferior a : " + cantidadStock);
+				//recordemos que al pedir datos al usuario
+				//Se los solicitamos mediante una textbox caja de texto
+				//por lo que si no parseamos el valor de vuelta lo tomara como una string que solo sera concatenada.
+
+				//Si el valor del stock es menor a 5 le sumamos automaticamente 10
+
+				//parseamos el valor de la variable y ademas le sumamos 10 a su valor original
+				cantidadStock = parseInt(cantidadStock)+10;
+				alert("Se han añadido 10 Productos adicionales al stock");
+			}
+			else
+			{
+				//en caso de superior a la condicion dada mostramos su valor original que fue dada por el usuario
+				alert("Stock actual : " + cantidadStock);
+
+			}
+
+			//imprimimos sobre el documento el valor de la variable
+			document.write("Cantidad de stock añadida al producto : " + cantidadStock);		
+		</script>	
+	</body>
+</html>	
