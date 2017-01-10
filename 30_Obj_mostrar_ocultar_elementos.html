@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<title>Mostrar y ocultar elementos</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+	<script type="text/javascript">
+	//funcion que oculta el elemento
+	function apagar(){
+		//la variable asignada contenedor que toma el id del div
+		var contenedor = document.getElementById("contenedor");
+		//Recordemos que la propiedad visibility solo permite hacer visible o invisible una caja, cuando le damos el valor de hidden la caja no se muestra ni sus elementos interiores pero sigue ocupando el sitio , por lo que los demas elementos que esten alrededor de este se seguiran comportando como si estuviese con la propiedad visible
+
+		//contenedor.style.visibility="hidden";
+
+		//cambiamos las pripiedad del css, para ocultar el elemento
+		contenedor.style.display = "none";	
+	}
+	//funcion que hace visible el elemento
+	function encender(){
+		var contenedor = document.getElementById("contenedor");
+		//contenedor.style.visibility = "visible";
+		//En este ejemplo utilizaremos la propedad display que a direfencia de visiblility , esta hace que el elemento desaparezca por completo y no ocupe sitio, el valor dado es block que hace que elemento ocupe todo el espacio dado mostrar su contenido
+
+		//cambiamos las pripiedad del css, para visulizar el elemento
+		contenedor.style.display = "block";
+	}
+	//esta funcion reutiliza las anteriores funciones de encender y apagar
+	function activarDesactivar(){
+		var contenedor = document.getElementById("contenedor");
+		//recuperamos el id del input de tipo boton
+		var boton = document.getElementById("btn_act_desc");
+		//recuperamos el id del checkbox
+		var checked_act = document.getElementById("checkbox_act_desc");
+
+		//si el contenedor cumple con una de las siguientes condiciones, generamos un evento diferente para el contenido del boton, y el la propiedad checked
+		if(contenedor.style.display == "block" || contenedor.style.display== "")
+		{
+			//si style.display = block
+			apagar();
+			boton.value = "Ver";
+			checked_act.checked = "";
+		}else{
+			//si style.display = ""
+			encender();
+			boton.value = "Ocultar";
+			checked_act.checked = "checked";
+			}
+		}
+	</script>
+	<style>
+		#contenedor
+		{
+			width:200px;
+			height:200px;
+			background-color:#489DCE;
+			display:block;
+		}
+	</style>
+	</head>
+	<body>
+		<label>Contenedor Visible
+		<input type="checkbox" id="checkbox_act_desc" onchange="activarDesactivar()" checked="checked">
+		</label>
+		 <br/>
+		<!--Contenedor que sera utilizado como ejemplo-->
+		<div id="contenedor"> 
+		</div>
+		<input type="button" value="apagar" onclick="apagar()" />	
+		<input type="button" value="encender" onclick="encender()" />
+		<br/>	
+		<input id="btn_act_desc" type="button" value="Ocultar" onclick="activarDesactivar()"> 
+	</body>
+</html>
