@@ -34,8 +34,8 @@ function entraEnFoco(elemento)
 		removeChild elimina un nodo y todos sus descendientes, 
 		donde el nodo padre es el nodo que queremos eliminar
 
-		Lo que hacemos basicamente es eliminar un elemento teniendo 
-		si ya esta definido, es decir si al llamar a la funcion 
+		Lo que hacemos basicamente es eliminar un elemento si ya
+		esta definido
 	*/
 
 		mensajeAlerta.parentNode.removeChild(mensajeAlerta);
