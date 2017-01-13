@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Leyendo y definiendo contenido</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+	<script type="text/javascript">
+		function llenarCaja()
+		{
+			var caja = document.getElementById("caja");
+			//todos lo objetos DOM tienen la propiedad innerHTML representa el HTML que esta dentro del elemento.
+			caja.innerHTML = "Esto es texto desde Javascript<br/>"
+			//innerHTMl es lo mas parecido al document.write, pero este ultimo no se puede ejecutar dentro de los eventos. para poder utilizar innerHTML debemos tener definido el contenedor.
+		}	  
+
+
+		function alertar(mensaje){
+			var estado = document.getElementById("estado");
+			estado.style.display = "block";
+			//estado.innerHTML = mensaje;
+			//la visualizacion de los mensajes se ira acumulando al presionar el boton o el link
+			estado.innerHTML = mensaje + "<br/>" + estado.innerHTML;
+		}
+	</script>
+	<style>
+		#estado
+		{
+			display: none;
+			
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			padding: 5px;
+			background-color:#E0E46E;
+			color:#E91634;
+			font-weight: bold;
+		}
+	</style>
+	</head>
+	<body>
+		<!--
+			Llamada a la funcion llenarCaja desde un link
+			que se completa con un texto dado desde innerHTML
+		-->
+		<a href="javascript:llenarCaja()">Llenar Caja</a> 
+		<!---->
+		<div id="caja"></div>
+		<!--elemento donde se visualizara el mensaje al presionar  sobre el boton "Generar Problema" y el link "Generar Mensaje"
+		-->
+		<div id="estado"></div>
+
+		<input type="button" 
+			   onclick="alertar('Ha Ocurrido un problema')"
+			   value="Generar problema"/>
+
+		<a href="javascript:alertar('Este mensaje fue generado desde un link')">Generar mensaje</a>
+	</body>
+</html>
