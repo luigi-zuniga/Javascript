@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Variables,Tipos de datos y expresiones regulares</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+	</head>
+	<body>
+		<script type="text/javascript">
+			//Ejemplos de declaracion de variables
+			//Nombres validos:
+			var dos_numeros;
+			var nombre1;
+			var Documento;
+			var nombreApellido;
+			var $dinero;
+			
+			/*
+				Declaracion de variable explicita
+				---------------------------------
+				Consiste en usar la sentencia var 
+				seguida del nombre de la variable, 
+				con esto añadimos claridad al codiigo
+			*/
+				var $miEdad;
+
+				//Declaracion explicira multiple
+				var $nombre , $apellido , $edad;
+
+				alert($nombre);
+
+			/*
+				Declaracion de variable implicita
+				----------------------------------
+				Es cuando escribimos directamente el
+				nombre de la variable sin una sentencia
+				previa, en este caso debe ir acompañada
+				obligatoriamente de un valor si no queremos
+				obtener un error.
+			*/ 
+
+				$miEdad = 26;
+			/*
+				Declaracion implicita erronea
+				---------------------------------------
+				Erronea al no tener un valor.
+				miedad;
+			*/
+
+			/*Nombres no validos
+			2_numero;
+			nombre-1;
+			%Documento;
+			nombre&apellido;
+			€dinero;
+			*/
+		</script>
+		<script type="text/javascript">
+		/*
+			Opcionalmente podemos asignar un valor a la variable al mismo tiempo que se declara,
+			lo cual se conoce inicializacion, a traves del operador de asignacion ( = )
+			Esta declaracion es ineludible si hacemos Declaraciones Implicitas
+		*/
+		//declaracion explicita con inicializacion
+		var alto = 5;
+
+		//declaracion implicita con inicializacion
+		ancho = 12;
+
+		//declaracion explicita multiple con inicializacion
+		var alto = 5, ancho = 17, profundo = 7;
+
+		//declaracion implicita multiple con inicializacion
+		hora = 14, minutos = 57, segundos = 41;
+			
+		//Declaracion explicita multiple, con o sin inicializacion
+		var calle, numero = 7, piso = 3;
+
+		/*Si declaramos la misma variable mas de una vez y la inicializamos
+		  con valores, prevalecera el ultimo que hayamos asignado.
+		*/
+		var alto=16;
+
+		alert(alto);
+		</script>
+	
+		<!--****************** CONSTANTES ******************** -->
+		<script type="text/javascript">
+			/*
+				Una constante es un valor que no puede ser modificado 
+				despues de haber sido inicializado, esto es util cuando
+				queremos trabajar con valores fijos
+				ej: el numero pi=3,14
+			*/
+
+			//declaracion de constantes
+			const $pi = 3.14;
+			const $valor_maximo = 256;
+			/*
+				si intentamos modicar el valor de una constante para luego
+				visulizarla, veremos que no se ejecutara.
+			*/
+			//$pi = $pi * 2;
+
+			alert("Valor de la constante PI : " + $pi + " " + "\nValor del valor maximo : " + $valor_maximo);
+			/*Lo que si modemos hacer sobre una constante es realizar operaciones aritmeticas sobre el mismo, esto no quere decir que estamos afectando su asignacion real*/
+			alert("Pi X 3 : " +  $pi * 3);
+
+			/*En cambio si tratamos de modificar su valor, sera ignorado y no se visulizara*/
+			$valor_maximo = $valor_maximo -2;
+			alert("Realizando una resta sobre el valor maximo" + ($valor_maximo-4));
+		</script>
+		<!--************ 	TIPOS DE DATOS	 ***********-->
+		<script type="text/javascript"> 
+			/*
+				Javascript se diferencia de nuevo de otros lenguajes de programacion
+				ya que solo tiene un tipo de valor numerico, Por tanto todo numero que escribamos,
+				ya sea entero o real, serà considerado del mismo tipo.
+				Tambien lo seran los numero reales escritos en notacion cientifica E o e.
+			*/	
+
+			//Declaracion de tipos de datos numericos
+			var altura = 5;
+			var preio = 12.65;
+			var temperatura = -3.0;
+			var PI = 3.141592;
+			var seiscientos = 6E2;
+			var sieteMilimetros = 7e-3;
+			var MILLON_Y_MEDIO = 1.5e6;
+
+
+			alert("Tipos de datos numerios : " + "\n" + sieteMilimetros +  "\n" + seiscientos + "\n" + MILLON_Y_MEDIO);
+		</script>
+		<!-- *************  LOGICOS  **************-->
+		<script type="text/javascript">
+			/*Conocido tambien como boolen o booleano*/
+		</script>
+
+	</body>
+</html>
