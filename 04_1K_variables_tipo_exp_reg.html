@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
 	</head>
 	<body>
+		<!--**********  DECLARACION DE VARIABLES *********-->
 		<script type="text/javascript">
 			//Ejemplos de declaracion de variables
 			//Nombres validos:
@@ -26,8 +27,6 @@
 
 				//Declaracion explicira multiple
 				var $nombre , $apellido , $edad;
-
-				alert($nombre);
 
 			/*
 				Declaracion de variable implicita
@@ -81,9 +80,10 @@
 		*/
 		var alto=16;
 
-		alert(alto);
+		alert("Declaracion explicita modificada : " + alto);
 		</script>
 	
+		
 		<!--****************** CONSTANTES ******************** -->
 		<script type="text/javascript">
 			/*
@@ -110,6 +110,7 @@
 			$valor_maximo = $valor_maximo -2;
 			alert("Realizando una resta sobre el valor maximo" + ($valor_maximo-4));
 		</script>
+		
 		<!--************ 	TIPOS DE DATOS	 ***********-->
 		<script type="text/javascript"> 
 			/*
@@ -131,9 +132,113 @@
 
 			alert("Tipos de datos numerios : " + "\n" + sieteMilimetros +  "\n" + seiscientos + "\n" + MILLON_Y_MEDIO);
 		</script>
+		
 		<!-- *************  LOGICOS  **************-->
 		<script type="text/javascript">
-			/*Conocido tambien como boolen o booleano*/
+			/*Conocido tambien como boolen o booleano
+			  tan solo abarca dos valores posibles,true o false
+			*/
+			var $esVerdadero = true;
+			var $esFalso = false;
+			var $comprobar = true;
+		</script>
+		
+		<!-- ********* CADENAS  ***********-->
+		<script type="text/javascript">
+			/*
+				Las cadenas o string se escriben en el codigo entre comillas dobles ("") 
+				o simples ('') pero nunca combinadas (en el caso de la declaracion de variables).
+			*/
+		var $idioma = "Español";
+		var $dni = '12345678A';
+		var $direccion = "Rua Carreira C/12"
+		var $nombreFichero = "mi_codigo.js";
+		//declaracion erronea de datos de tipo cadena  o string
+		//var pais = "Chile';
+
+		/*	
+			CARACTERES ESPECIALES
+			---------------------
+			Para identificar los caracteres especiales utilizaremos lo que se 
+			denomina caracter de escape, que no es mas que una barra inversa o backslash \
+			Este caracter de escape ira colocado delante del caracter que se incluira expresamente
+			mediante el codigo
+			
+			Lista de caracteres especiales.
+			-------------------------------------------------------------------
+			|  Codigo del caracter |   Modo de empleo  	|   Descripcion	      |
+			-------------------------------------------------------------------
+			|	"				   |   \"				|	Comilla dobles    |
+			-------------------------------------------------------------------
+			|	'				   |   \'				|   Comilla simple    |
+			-------------------------------------------------------------------
+			|	\				   |   \\				|    Barra inversa    |
+			-------------------------------------------------------------------
+			|	n 				   |   \n               | 	 Nueva Linea      |	
+			-------------------------------------------------------------------
+			|	t                  |   \t               |      Tabulador      | 
+			-------------------------------------------------------------------
+			| 	r 				   |   \r 				|   Retorno de Carro  |
+			-------------------------------------------------------------------
+			|  	b 				   |   \b               |      Retroceso      |
+			-------------------------------------------------------------------
+			|   f 				   |   \f   	 		|   Avance de Pagina  |
+			-------------------------------------------------------------------
+			|	v 				   |   \v  				|  Tabulador Vertical |	
+			-------------------------------------------------------------------
+		*/
+		//Ejemplo 1 de caracteres especiales en cadenas
+		var cadena = "El fichero esta en C:\\Documentos";
+		//Mostrar su valor
+		alert(cadena);
+
+		//Ejemplo 2 de caracteres especiales en cadenas
+		var cadenasDos = "Este libro se titula \"Guia de Javascript\"";
+		//Mostramos su valor
+		alert(cadenasDos);
+
+		//Ejemplo 3 de caracteres especiales en cadenas
+		var cadenaTres = "Primera linea\nSegunda Linea\nTer\u00A9era Linea";
+		//Mostramos su valor
+		alert(cadenaTres);
+		</script>
+
+		<!-- ********* VALORES ESPECIALES ***********-->
+		<script type="text/javascript">
+		/*
+		Las variables en Javascript pueden tomar una serie de valores especiales
+		cuando estamos trabajando con ellas:
+
+		- Indefinido (undefined) 
+		  Este valor indica que la variable aun no ha tomado ningun valor.
+		
+		- Nulo (null)	        
+		  Nos permite definir o comprobar que una variable esta vacia.		
+		
+		- No Numerico (NaN , Not a Number) 
+		  Una variable recibe este valor si almacena el resultado de alguna
+		  operacion matematica no valida (division por 0 por ejemplo).
+		
+		- Infinito (Infinity): Nos indica que un variable numerica ha tomado un valor demasiado 
+				    alto (infinito) como resultado de la operacion que hemos tratado de hacer.
+				    (-Infinity) infinito negativo, cuando la operacion se realiza con numeros 
+				    negativos.
+		*/	
+
+		var $numero; 					  //undefined
+		var $ahorros = null; 			 //null
+		var $division = 0/0; 		    //NaN
+		var $fraccion = 5/0; 		   //Infinity
+		var $fraccionNegativa = -1/0; // -Infinity
+		var $suma = $numero + 5; 	 //NaN (Numero no estaba inicializado)
+
+		document.write($numero   + "</br>"); 
+		document.write($ahorros  + "</br>");
+		document.write($division + "</br>");
+		document.write($fraccion + "</br>");
+		document.write($fraccionNegativa + "</br>");
+		document.write($suma);
+
 		</script>
 
 	</body>
