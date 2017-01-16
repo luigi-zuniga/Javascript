@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Formulario de Registro</title>
+		<title>Validando datos obligatorios</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
 		<script type="text/javascript" src="js/formulario.js"></script>
@@ -58,13 +58,6 @@
 				width: 200px;
 			}
 			
-			/*Clase usada por JS*/		
-			.mensajeAlerta
-			{
-				font-size:xx-small;
-				color: #FD2C2C;
-			}
-
 			/*Clase CSS para interactuar con JS*/
 			.enFoco
 			{
@@ -72,9 +65,18 @@
 				border:1px solid #5B7AFF;	
 			}
 			
-			.fueraFoco{
+			.fueraFoco
+			{
 				background-color:#fff;
 			}
+
+			/*Clase CSS llamada desde la funcion error*/
+			input.error
+			{
+				background-color:#FC2126;
+				border: 1px solid #FD6533;
+			}
+
 		</style>		
 	</head>
 	<body>
@@ -85,14 +87,22 @@
 					<input type="text" id="nombre" name="nombre" 
 					placeholder="Ingrese su Nombre"
 					onfocus="entraEnFoco(this)"
-					onblur="salidaDeFoco(this)" 
-					></input>
+					onblur="salidaDeFoco(this);
+					revisarObligatorio(this)" 
+					>
+					<!--
+					Desde onblur hacemos las comprobaciones
+					la separacion de las funciones dentro
+					las realizamos con ;
+					-->
+					</input>
 				</li>
 				<li>
 					<label for="direccion">Direccion</label>
 					<input type="text" id="direccion" name="direccion" placeholder="Ingrese su Direccion"
 					onfocus="entraEnFoco(this)"
-					onblur="salidaDeFoco(this)" 
+					onblur="salidaDeFoco(this);
+					revisarObligatorio(this)" 
 					>
 					</input>
 				</li>
@@ -101,7 +111,8 @@
 					<input type="text" id="edad" name="edad" 
 					placeholder="Ingrese su Edad"
 					onfocus="entraEnFoco(this)"
-					onblur="salidaDeFoco(this)" 
+					onblur="salidaDeFoco(this);
+					revisarObligatorio(this)" 					
 					>
 					</input>
 					</li>
@@ -109,15 +120,14 @@
 					<label for="email">Email</label>
 					<input type="text" id="email" name="email" placeholder="Ingrese su Email"
 					onfocus="entraEnFoco(this)"
-					onblur="salidaDeFoco(this)" 
+					onblur="salidaDeFoco(this);
+					revisarObligatorio(this)" 					
 					>
 					</input>
 				</li>
 				<li>
 					<label for="estadoCivil">Estado Civil</label>
 					<select id="estadoCivil" name="estadoCivil"
-					onfocus="entraEnFoco(this)"
-					onblur="salidaDeFoco(this)" 
 					>
 					  	<option value="1">Seleccione</option>
 					   	<option value="2">Soltero/a</option>
