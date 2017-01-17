@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Validando datos Numericos</title>
+		<title>Validando Longitudes de Texto</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
 		<script type="text/javascript" src="js/formulario.js"></script>
@@ -88,12 +88,12 @@
 					placeholder="Ingrese su Nombre"
 					onfocus="entraEnFoco(this)"
 					onblur="salidaDeFoco(this);
-					revisarNumerico(this)" 
+					revisarLongitud(this , 2)"
 					>
 					<!--
-					Recordemos que THIS
-					es el objeto DOM
-					del INPUT TYPE
+					En la funcion revisarLongitud
+					el segundo campo dado "2" indica
+					el caracter minimo a ingresar
 					-->
 					</input>
 				</li>
@@ -102,7 +102,7 @@
 					<input type="text" id="direccion" name="direccion" placeholder="Ingrese su Direccion"
 					onfocus="entraEnFoco(this)"
 					onblur="salidaDeFoco(this);
-					revisarNumerico(this)" 
+					revisarLongitud(this , 8)"
 					>
 					</input>
 				</li>
@@ -120,8 +120,7 @@
 					<label for="email">Email</label>
 					<input type="text" id="email" name="email" placeholder="Ingrese su Email"
 					onfocus="entraEnFoco(this)"
-					onblur="salidaDeFoco(this);
-					revisarNumerico(this)" 				
+					onblur="salidaDeFoco(this)"			
 					>
 					</input>
 				</li>
