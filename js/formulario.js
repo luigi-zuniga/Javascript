@@ -42,3 +42,28 @@ function revisarLongitud(elemento, minimo)
 		}
 	}
 }
+
+
+function revisarEmail(elemento)
+{
+	//revision mediante expresiones regulares
+	if(elemento.value!="")
+	{
+		var dato = elemento.value;
+		//las expresiones regulares comienzan con / y terminan con /
+		//Lo que realmente nos interesa saber de la expresion es que es un OBJETO
+		//y como tal tiene un metodo llamado test() donde le damos un dato 
+		//el cual nos devuelve si esta correcto o no, si cumple o no con la condicion.
+		var expresion = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
+		
+		if(!expresion.test(dato))
+		{	
+			//si la condicion no cumple con expresion regular añadimos la clase erro 
+			elemento.className = "error";
+		}else{
+			//si cumple la condicion, no llamamos a la clase de error por lo cual estaria OK!
+			className = "";
+		}
+	}
+}
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Validando Longitudes de Texto</title>
+		<title>Validando Correo Electronico</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
 		<script type="text/javascript" src="js/formulario.js"></script>
@@ -90,11 +90,6 @@
 					onblur="salidaDeFoco(this);
 					revisarLongitud(this , 2)"
 					>
-					<!--
-					En la funcion revisarLongitud
-					el segundo campo dado "2" indica
-					el caracter minimo a ingresar
-					-->
 					</input>
 				</li>
 				<li>
@@ -120,8 +115,13 @@
 					<label for="email">Email</label>
 					<input type="text" id="email" name="email" placeholder="Ingrese su Email"
 					onfocus="entraEnFoco(this)"
-					onblur="salidaDeFoco(this)"			
+					onblur="salidaDeFoco(this);
+					revisarEmail(this)"			
 					>
+					<!--
+					Verificacion de correo
+
+					-->
 					</input>
 				</li>
 				<li>
