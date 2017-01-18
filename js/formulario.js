@@ -48,6 +48,8 @@ function revisarEmail(elemento)
 	//revision mediante expresiones regulares
 	if(elemento.value!="")
 	{
+		//Si elemento(devuelto por this) cumple la condicion
+		//entregamos su valor a la variable implicita dato
 		var dato = elemento.value;
 		//las expresiones regulares comienzan con / y terminan con /
 		//Lo que realmente nos interesa saber de la expresion es que es un OBJETO
@@ -94,7 +96,28 @@ function validar()
 		estaTodoOK = false;
 		alert("Edad vacia o no numerica");
 	}
-	//COMPROBAR ESTA EXPRESION REGULAR
+	
+	//La siguiente expresion regular no permite correos tales como
+	//caracteres latinos, falla con las siguientes expresiones
+	/*
+		germán@bla.com
+		yo@mi-compañía.com
+		estação@brasil.com.br
+	*/
+	/*
+		
+	function validarEmail(valor) {
+  		if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
+   			alert("La dirección de email " + valor + " es correcta!.");
+  		}else{
+   			alert("La dirección de email es incorrecta!.");
+  		}
+	}
+	
+
+	validarEmail("jorgésys.boc+al@hotflow.com");
+	
+	*/
 	var expresion = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
 	if(expresion.test(document.getElementById("email")))
 	{
