@@ -1,7 +1,6 @@
 function entraEnFoco(elemento)
 {
 	elemento.className = "enFoco";
-	
 }
 
 function salidaDeFoco(elemento)
@@ -54,6 +53,7 @@ function revisarEmail(elemento)
 		//Lo que realmente nos interesa saber de la expresion es que es un OBJETO
 		//y como tal tiene un metodo llamado test() donde le damos un dato 
 		//el cual nos devuelve si esta correcto o no, si cumple o no con la condicion.
+	
 		var expresion = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
 		
 		if(!expresion.test(dato))
@@ -65,5 +65,57 @@ function revisarEmail(elemento)
 			className = "";
 		}
 	}
+}
+
+
+//Lo que hacemos en la funcion validar es volver a validar cada uno de los campos
+function validar()
+{
+	//generamos una variable booleana (logica)
+	var estaTodoOK = true; 
+
+	/*El objetivo de esta variable es preguntar campo por campo 
+	  si esta todo bien y si es asi el formulario se envia
+	  al entrar a las condiciones y alguna de las condiciones no se cumple
+	  nuestra variable estadoOk cambia a false y el envio del formulario se detiene.
+	*/
+	if(document.getElementById("nombre").value.length < 2)
+	{
+		estaTodoOK = false;
+		alert("Nombre Minimo 2 letras");
+	}
+	if(document.getElementById("direccion").value.length < 8)
+	{
+		estaTodoOK = false;
+		alert("Direccion Minimo 8 letras");
+	}
+	if(document.getElementById("edad").value!="" && (isNaN(document.getElementById("edad").value)))
+	{
+		estaTodoOK = false;
+		alert("Edad vacia o no numerica");
+	}
+	//COMPROBAR ESTA EXPRESION REGULAR
+	var expresion = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
+	if(expresion.test(document.getElementById("email")))
+	{
+		estaTodoOK = false;
+		alert("Email mal ingresado");
+	}
+	//con esta condicion solicitamos al usuario deba seleccionar un opcion
+	if(document.getElementById("estadoCivil").value == "")
+	{
+		estaTodoOK = false;
+		alert("Estado Civil no seleccionado");
+	}
+	//con ! comprobamos si NO esta checkeado
+	if(!document.getElementById("aceptoCondiciones").checked)
+	{
+		estaTodoOK = false;
+		alert("Acepte los termino de condiciones");
+	}
+
+	//una vez finalizada la comprobacion devolvemos la expresion
+	//dependiendo si cumple o no sera true o false
+	return estaTodoOK;
 }
 
