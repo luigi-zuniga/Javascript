@@ -1,0 +1,75 @@
+<style type="text/css">
+	body
+	{
+		background:#451C97; 
+		color:#F8F5F5;
+		font-family:'Ubuntu';
+	}	
+
+	h3
+	{
+		font-weight: 500px;
+		text-align: center;
+		font-size: 1.8em;
+	}
+
+	.container
+	{
+		width: 200px;
+		margin: auto;
+	}
+
+	p
+	{
+		text-align: center;
+		margin: auto;	
+	}
+	p > a
+	{
+		color:#FFF5F5;
+		text-decoration: none;
+		border:1px;
+		border-radius: 10px;
+		background: #F21111;
+		padding:.7em;
+	}
+	
+</style>
+<script type="text/javascript">
+	var fecha = new Date();
+	var dia = fecha.getDate();
+	var mes = fecha.getMonth();
+	var any = fecha.getFullYear();
+
+	var meses = 
+	["Enero"
+	,"Febrero"
+	,"Marzo"
+	,"Abril"
+	,"Mayo"
+	,"Junio"
+	,"Julio"
+	,"Agosto"
+	,"Septiembre"
+	,"Octubre"
+	,"Noviembre"
+	,"Diciembre"
+	];
+	
+	document.write("<p>Hoy es " + dia + " de " + meses[mes] + " del " + any +"</p>");
+
+	function cerraPopUp()
+	{
+		window.close();	
+	}
+
+</script>
+<body>
+	<div class="container">
+		<h3>Esto es un POPUP</h3>
+		<!--
+			Llamada al metodo window.close para cerrar la ventana
+		-->
+		<p><a href="#" onclick="cerraPopUp()">Cerrar</a></p>
+	</div>
+</body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ES">
+	<head>
+		<title>Abriendo Ventanas Nuevas</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+		<script type="text/javascript">
+		
+		var miVentana;
+
+		function abrirVentana()
+		{
+			miVentana = window.open("popup.html","miVentana",
+		 	"width=300,height=400,resizable=no,toolbar=no,menubar=no,statusbar=no,scrollbars=no"
+		 	);
+		}
+
+		function cerrarVent()
+		{
+			miVentana.close();
+		}
+		</script>
+	</head>
+	<body>
+		<!--
+			Los POPUP son ventanas que se abren 
+			por encima de su pagina web.
+		-->
+		<input type="button" value="Abrir Ventana"
+		 onclick="abrirVentana()"/>
+		 <input type="button" value="Cerrar Ventana" onclick="cerrarVent()" />
+	</body>
+</html>
