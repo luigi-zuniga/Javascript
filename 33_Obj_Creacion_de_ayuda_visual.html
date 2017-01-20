@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Formulario de Registro</title>
+		<title>Validacion Capturando onSubmit</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
 		<script type="text/javascript" src="js/formulario.js"></script>
@@ -58,41 +58,58 @@
 				width: 200px;
 			}
 			
-			/*Clase usada por JS*/		
-			.mensajeAlerta
-			{
-				font-size:xx-small;
-				color: #FD2C2C;
-			}
-
 			/*Clase CSS para interactuar con JS*/
 			.enFoco
 			{
 				background-color:#F3ED85;
 				border:1px solid #5B7AFF;	
 			}
-			
-			.fueraFoco{
+			/*Clase CSS para cambiar fondo*/
+			.fueraFoco
+			{
 				background-color:#fff;
 			}
+
+			/*Clase CSS llamada desde la funcion error*/
+			input.error
+			{
+				background-color:#FC2126;
+				border: 1px solid #FD6533;
+			}
+			
 		</style>		
 	</head>
 	<body>
-		<form action="">
+		<form onsubmit="return validar();">
+		<!-- 
+			Aun teniendo todas las funciones de comprobacion
+			podemos presionar el boton de enviar, sin que este
+			realize la oportuna verificacion de los campos solicitados
+			permitiendo que el usuario haga un envio vacio ya que no
+			pasa por los onblur, de todos ellos.
+
+			onSubmit
+			return validar();
+			retornara falso si envia algunos de los campos falla
+			con esto frenamos el envio del formulario.
+		-->
 			<ul>
 				<li>
-					<label for="nombre">Nombre</label>
+					<label for="nombre" >Nombre</label>
 					<input type="text" id="nombre" name="nombre" 
 					placeholder="Ingrese su Nombre"
 					onfocus="entraEnFoco(this)"
-					onblur="salidaDeFoco(this)" 
-					></input>
+					onblur="salidaDeFoco(this);
+					revisarLongitud(this , 2)"
+					>
+					</input>
 				</li>
 				<li>
 					<label for="direccion">Direccion</label>
 					<input type="text" id="direccion" name="direccion" placeholder="Ingrese su Direccion"
 					onfocus="entraEnFoco(this)"
-					onblur="salidaDeFoco(this)" 
+					onblur="salidaDeFoco(this);
+					revisarLongitud(this , 8)"
 					>
 					</input>
 				</li>
@@ -101,7 +118,8 @@
 					<input type="text" id="edad" name="edad" 
 					placeholder="Ingrese su Edad"
 					onfocus="entraEnFoco(this)"
-					onblur="salidaDeFoco(this)" 
+					onblur="salidaDeFoco(this);
+					revisarNumerico(this)" 					
 					>
 					</input>
 					</li>
@@ -109,25 +127,33 @@
 					<label for="email">Email</label>
 					<input type="text" id="email" name="email" placeholder="Ingrese su Email"
 					onfocus="entraEnFoco(this)"
-					onblur="salidaDeFoco(this)" 
+					onblur="salidaDeFoco(this);
+					revisarEmail(this)"			
 					>
 					</input>
 				</li>
 				<li>
 					<label for="estadoCivil">Estado Civil</label>
 					<select id="estadoCivil" name="estadoCivil"
-					onfocus="entraEnFoco(this)"
-					onblur="salidaDeFoco(this)" 
 					>
-					  	<option value="1">Seleccione</option>
-					   	<option value="2">Soltero/a</option>
-					   	<option value="3">Casado/a</option>
-					   	<option value="4">Divorciado/a</option>
+					<!--
+						Para realizar el envio de formulario
+						tenemos que hace comprobar que la opcion
+						seleccionada no sea vacio, por lo que pondremos un value="" en seleccione
+						para hacer que el usuario nos devueva
+						un valor que no sea vacio, es decir que
+						seleccione una de las opciones.
+					-->
+					  	<option value="">Seleccione</option>
+					   	<option>Soltero/a</option>
+					   	<option>Casado/a</option>
+					   	<option >Divorciado/a</option>
 					</select>
 				</li>
 				<li>
 				<label>
-					<input type="checkbox" value="SI" />
+					<input type="checkbox" value="SI" 
+					id="aceptoCondiciones"/>
 					Acepto las Condiciones
 					</label>
 				</li>
