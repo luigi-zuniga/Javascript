@@ -1,0 +1,84 @@
+			body{
+				background:#fff;
+				font-family:'Ubuntu',Arial,sans-serif;
+			}
+
+			h1,h2
+			{
+				text-align:center;
+				font-weight:lighter;
+			}
+
+			h1 > span
+			{
+				font-size:2.6em;
+			}
+			
+			h2
+			{
+				font-size:1em;
+				margin-top:-10px;
+				margin-bottom: 30px;
+			}
+
+			span.blue
+			{
+				color:#4285f4;
+			}
+			span.red{
+				color:#f44;
+			}
+
+			span.yellow
+			{
+				color:#fbbc05;
+			}
+
+			span.green
+			{
+				color:#34a853;
+			}
+			form
+			{
+				width: 400px;
+				margin: auto;
+			}
+
+			input
+			{
+				font-weight:lighter;
+			}
+
+			input[type=text]
+			{
+				float: left;
+				width: 260px;
+				margin-left: 10px;
+				padding: 4px;
+				margin-right:3px;
+			}
+
+			button
+			{
+				font-weight:normal;
+				padding: 4px;
+				width: 80px;
+
+			}
+
+
+			/*Clases de error llamados por Javascript*/
+			.mensaje
+			{
+				text-align: center;
+				padding: 10px;
+				background: #f44;
+				border-radius: 15px;
+				color: #fff;
+				font-size: 1em;
+				font-weight: normal;
+				width:390px;
+				float: left;
+				margin-top:20px;
+			}
+			

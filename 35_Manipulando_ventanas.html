@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ES">
+	<head>
+		<title>Manipulando Ventanas</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+		<script type="text/javascript">
+		
+		var miVentana;
+
+		function abrirVentana()
+		{
+			//Si deseamos abrir multiples ventanas
+			//Asignamos el nombre _blank en lugar de miVentana
+			miVentana = window.open("popup.html","miVentana",
+		 	"width=330,height=400,resizable=no,toolbar=no,menubar=no,statusbar=no,scrollbars=no"
+		 	);
+		}
+
+		function cerrarVent()
+		{
+			miVentana.close();
+		}
+
+		//Funcion que recibe un mensaje 
+		function recibirMensaje(mensaje)
+		{
+			//damos id del div mensaje
+			document.getElementById("mensaje").innerHTML = mensaje;
+		}
+
+		</script>
+	</head>
+	<body>
+		<!--
+			Los POPUP son ventanas que se abren 
+			por encima de su pagina web.
+		-->
+		<input type="button" value="Abrir Ventana"
+		 onclick="abrirVentana()"/>
+		 <input type="button" value="Cerrar Ventana" onclick="cerrarVent()" />
+		 <input type="button" value="Comunicacion con POPUP" onclick="miVentana.recibirMensaje('HOLA SOY TU PADRE')"/>
+
+		<!--recibe el mensaje desde el POPUP-->
+		 <p id="mensaje"></p>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ES">
+	<head>
+	<title>Expresiones Regulares</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+	<link rel="stylesheet" href="css/34_1k_styles.css" />
+	<script type="text/javascript">
+		//Expresiones regulares
+		//PATRON SIMPLE
+		function mensajeError()
+		{
+			var contenedor = document.getElementById("mensaje");
+			contenedor.innerHTML = "No ingrese valores numericos o vacios";
+		}
+		function mensajeCorrecto()
+		{
+			var contenedor = document.getElementById("mensaje");
+			contenedor.innerHTML = "Coincidencia encontrada...!"
+		}
+
+		function comprobar()
+		{				
+			var estado = true;
+			var frase = document.getElementById('campo').value; 
+			var mens_caj = document.getElementById('mensaje');
+
+			if(!isNaN(frase) && frase.value!="")
+			{
+				estado = false;
+				mensajeError();
+				mens_caj.className = "mensaje";
+			}else{
+				if(/el/.test(frase))
+				{
+					estado = false;
+					mensajeCorrecto();
+					mens_caj.className = "mensaje";
+					mens_caj.style.background="#34a853";
+				}
+			}
+
+			return estado;
+		}
+	</script>
+	</head>
+	<body>
+		<h1><span class="blue">G</span><span class="red">o</span><span class="yellow">o</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span>
+		</h1>
+		<h2><span>By Kernel Luigi</span></h2>
+		<form onsubmit="return comprobar()">
+			<input type="text" placeholder="Comprobar palabra..." name="campo" id="campo"/>
+			<button>Buscar</button>
+			<div id="mensaje">
+			</div>
+		</form>
+	</body>
+</html>

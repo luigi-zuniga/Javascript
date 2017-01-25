@@ -15,15 +15,26 @@
 
 	.container
 	{
-		width: 200px;
+		width: 300px;
 		margin: auto;
+	}
+
+	input[type="button"]
+	{
+		background:#DB5B26;
+		color:#fff;
+		font-weight: bold;
+		border:1px solid red;
+		border-radius:10px;
+		padding: 10px;
+		width: 300px;
 	}
 
 	p
 	{
 		text-align: center;
-		margin: auto;	
 	}
+
 	p > a
 	{
 		color:#FFF5F5;
@@ -35,6 +46,7 @@
 	}
 	
 </style>
+
 <script type="text/javascript">
 	var fecha = new Date();
 	var dia = fecha.getDate();
@@ -62,7 +74,14 @@
 	{
 		window.close();	
 	}
-
+</script>
+<script  type="text/javascript">
+		//Funcion que recibe un mensaje 
+		function recibirMensaje(mensaje)
+		{
+			//damos id del div mensaje
+			document.getElementById("mensaje").innerHTML = mensaje;
+		}
 </script>
 <body>
 	<div class="container">
@@ -70,6 +89,16 @@
 		<!--
 			Llamada al metodo window.close para cerrar la ventana
 		-->
+		<!--
+			opener Objeto que solo funciona en los POPUP
+			representa a la ventana que nos abrio, y podemos llamar desde este a cualqueir funcion
+			que tenga el opnener en este caso recibirmensaje() que es invocado desde el otro documento que hace el llamado de este
+		-->
+		<input type="button" 
+			   onclick="opener.recibirMensaje('Mensaje desde el POPUP Principal')" 
+			   value="Comunicacion con ventana principal" />
+		<br/>
+		<p id="mensaje"></p>
 		<p><a href="#" onclick="cerraPopUp()">Cerrar</a></p>
 	</div>
 </body>
