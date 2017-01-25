@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Otras Vias</title>
+    <!--STYLE DESDE CDN DE BOOTSTRAP-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<style type="text/css">
+		#divModalPopUp
+		{
+			position: absolute;
+			width: 380px;
+			height: 290px;
+			z-index: 1;
+			left: 232px;
+			top: 50px;
+			background-color: red;
+			display: none;	
+		}
+	</style>
+
+  </head>
+  <body>
+    <h1>Otras Vias</h1>
+	<a href="javascript:window.print()">
+		Imprimir
+	</a>
+	<br/>
+	<input type="button" onclick="window.location.href='https://www.google.es'" value="Google España">
+	<br/>
+	<a href="javascript:history.back()">Back</a>
+
+	<!-- POPINTER o MODAL POPUP
+		 Creado para eliminar el problema de los bloqueadores de POPUP, y es solamente un div con la propiedad display:none
+	-->
+	<br/>
+	<input type="button" 
+	onclick="document.getElementById('divModalPopUp').style.display='block';" value="Abrir Ventana Modal"
+	/>
+	<div id="divModalPopUp">
+		<p>Esto es un Modal POPUP</p>
+		<br/>
+		<a href="javascript:document.getElementById('divModalPopUp').style.display='none';">
+			Cerrar
+		</a>	
+	</div>
+
+	<!--JSBootstrap y Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+  </body>
+</html>

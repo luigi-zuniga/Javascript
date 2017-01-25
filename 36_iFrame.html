@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iFrame</title>
+    <!--STYLE DESDE CDN DE BOOTSTRAP-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--FUNCION QUE RECIBE UN MENSAJE DADO DESDE 
+        IFRAME CON EL OBJETO PARENT QUE ENVIA EL MENSAJE
+    -->
+    <script type="text/javascript">
+      function recibirMensaje(mensaje)
+      {
+        alert(mensaje);
+      }
+    </script>
+  </head>
+  <body class="container">
+    <div class="row">
+    <h1>iFrame</h1>
+    <p>Son cuadros internos que funcionan dentro de la misma ventana</p>
+    <!--IFRAME
+      DESDE UN IFRAME SOLO PODEMOS TENER ACCEDO A LAS FUNCIONES DE JAVASCRIPT QUE SEAN DE NUESTRO PROYECTO u DOMINIO Y NO DESDE PAGINAS EXTERNAS, ES DECIR, QUE NO PODEMOS UTILIZAR NUESTRAS FUNCIONES PARA OPERAR SOBRE PAGINAS LLAMADAS DE FORMA EXTERNA A NUESTRO IFRAME, GENERANDO ASI UNA COMUNICACION BIDIRECCIONAL
+    -->
+    <iframe src="contenidoIframe.html" frameborder="0" width="400" hight="500" id="iframe1">    
+    </iframe>
+    <!--SI UTILIZAMOS LA ETIQUETA ID PODEMOS COMUNICAR MEDIANTE JAVASCRIPT A LA PAGINA QUE ES GENERADA POR EL IFRAME -->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+  </body>
+</html>
